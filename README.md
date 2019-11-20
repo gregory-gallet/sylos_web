@@ -1,2 +1,2 @@
 # sylos_web
-Site web de Sylos
+Site web de Sylos - entreprise de développement logiciel
