@@ -1,28 +1,38 @@
-## https://openclassrooms.com/fr/courses/2342361-gerez-votre-code-avec-git-et-github/2433691-creez-des-branches
+﻿## https://openclassrooms.com/fr/courses/2342361-gerez-votre-code-avec-git-et-github/2433691-creez-des-branches
 
-git status 						# Voir les fichiers à traiter
-git add NOM_FIC OU REP 		 	# Ajout du fichier ou dossier à suivre
-git commit -m "COMMENTAIRES" 	# Enregistrement des modifications (snapshot instant X)
-git commit -am "COMMENTAIRES"	# Enregistrement automatiques de tous les fichiers ajoutés
+git init										# Initialisation du repo
+git status 										# Voir les fichiers à traiter
+git add NOM_FIC OU REP 		 					# Ajout du fichier ou dossier à suivre
+git commit -m "COMMENTAIRES" 					# Enregistrement des modifications (snapshot instant X)
+git commit -am "COMMENTAIRES"					# Enregistrement automatiques de tous les fichiers ajoutés
 git commit --amend -m "Votre nouveau message"	# Modifier le message précédent
 
-git log							# voir les snapshot
-git checkout SHA				# permet de se positionner dans le snap CHA
-git checkout master				# permet de retourner au dernier snap
+git log											# voir les snapshot
+git checkout SHA								# permet de se positionner dans le snap CHA
+git checkout master								# permet de retourner au dernier snap
 
-git reset --hard 				# permet d'annuler tous les changements que je n'ai pas encore commités
+git reset --hard 								# permet d'annuler tous les changements que je n'ai pas encore commités
 
 
 # Represitory distant
 # créer un compte sur github
 # rechercher le code
 git clone https://github.com/facebook/react.git		# récupère le code de react
-git push origin master								# pousse le code sur le repo Github : origine = serveur central ; master = dernier code
-git pull origin master								# récupère les dernieres modifications du serveur
+git push origin master							# pousse le code sur le repo Github : origine = serveur central ; master = dernier code
+git pull origin master							# récupère les dernieres modifications du serveur
 
 
 # BRANCHE
-git branch 						# affiche la liste des branches
-git branch 'mon-test'			# crée la nouvelle branche mon-test
-git checkout 'mon-test'			# permet de changer de branche
-git checkout -b 'mon-test'		# permet de créer et changer de branche
+git branch 										# affiche la liste des branches
+git branch 'mon-test'							# crée la nouvelle branche mon-test
+git checkout 'mon-test'							# permet de changer de branche
+git checkout -b 'mon-test'						# permet de créer et changer de branche
+
+# Pour fusionner les branches je me positionne dans la branche qui doit récupérer les les données et je lance la commande 
+git merge bancheB    							# https://openclassrooms.com/fr/courses/2342361-gerez-votre-code-avec-git-et-github/2433711-resolvez-un-conflit
+git mergetool vimdiff 							# permet de résourdre les conflits directement depuis un outils sinon il faut passer via vim
+
+
+# VOIR QUI A FAIT QUOI 
+git blame Nom_Fic 								# Affiche l'ensemble des informations sur qui à fait quoi et dans qu'elle commités
+git show SHA									# Permet d'afficher toute les modifictaion faite dans le commit
